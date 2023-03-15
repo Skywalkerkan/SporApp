@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>195388063270-u3o49graf5981buqej8l03qo2s48704g.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.195388063270-u3o49graf5981buqej8l03qo2s48704g</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCHk5oTH3h6gkOoBLeurylVf8mxN2hAL_M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>195388063270</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.erkancosar.SporApp</string>
+	<key>PROJECT_ID</key>
+	<string>sporapp-b7483</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sporapp-b7483.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:195388063270:ios:1ecc734da8811e05cfb0e7</string>
+</dict>
+</plist>
