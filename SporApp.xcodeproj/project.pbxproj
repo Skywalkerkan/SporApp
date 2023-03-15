@@ -13,6 +13,8 @@
 		DE32D8B429BE5E9F00AE676A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE32D8B229BE5E9F00AE676A /* Main.storyboard */; };
 		DE32D8B629BE5EA000AE676A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE32D8B529BE5EA000AE676A /* Assets.xcassets */; };
 		DE32D8B929BE5EA000AE676A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE32D8B729BE5EA000AE676A /* LaunchScreen.storyboard */; };
+		DE32D8C129BE62ED00AE676A /* FirstScreenSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32D8C029BE62ED00AE676A /* FirstScreenSlide.swift */; };
+		DE32D8C329BE686C00AE676A /* SlideCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32D8C229BE686C00AE676A /* SlideCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		DE32D8B529BE5EA000AE676A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE32D8B829BE5EA000AE676A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE32D8BA29BE5EA000AE676A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE32D8C029BE62ED00AE676A /* FirstScreenSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenSlide.swift; sourceTree = "<group>"; };
+		DE32D8C229BE686C00AE676A /* SlideCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				DE32D8B529BE5EA000AE676A /* Assets.xcassets */,
 				DE32D8B729BE5EA000AE676A /* LaunchScreen.storyboard */,
 				DE32D8BA29BE5EA000AE676A /* Info.plist */,
+				DE32D8C029BE62ED00AE676A /* FirstScreenSlide.swift */,
+				DE32D8C229BE686C00AE676A /* SlideCollectionViewCell.swift */,
 			);
 			path = SporApp;
 			sourceTree = "<group>";
@@ -140,7 +146,9 @@
 			files = (
 				DE32D8B129BE5E9F00AE676A /* ViewController.swift in Sources */,
 				DE32D8AD29BE5E9F00AE676A /* AppDelegate.swift in Sources */,
+				DE32D8C129BE62ED00AE676A /* FirstScreenSlide.swift in Sources */,
 				DE32D8AF29BE5E9F00AE676A /* SceneDelegate.swift in Sources */,
+				DE32D8C329BE686C00AE676A /* SlideCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
