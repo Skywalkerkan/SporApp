@@ -20,6 +20,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         girisEkranLayout()
+
+        
+        
+        
         
 
         
@@ -27,6 +31,37 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func girisYapClicked(_ sender: Any) {
+        
+        guard let email = txtEmail.text else{return}
+        guard let parola = txtParola.text else{return}
+        
+        
+        Auth.auth().signIn(withEmail: email, password: parola) { [weak self] result, error in
+            if let error = error{
+                print("Giriş Yapılamadı \(error)")
+            }
+            print("Başarılı şekilde giriş yapıldı")
+            //print(result?.user.value(forKey: "ProfilGoruntuURL"))
+            let db = Firestore.firestore()
+            let documentRef = db.collection("Kullanicilar").document(result?.user.uid ?? "")
+            //let docRef = firebase.collection("cities").document("SF")
+            
+            documentRef.getDocument { snapshot, error in
+                guard let data = snapshot?.data(), error == nil else{return}
+                
+                guard let text = data["KullaniciAdi"] else{return}
+                print(text)
+                
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyBoard.instantiateViewController(withIdentifier: "tabBarController")
+                viewController.modalPresentationStyle = .fullScreen
+                self?.present(viewController, animated: true)
+            }
+            
+ 
+            
+        }
+        
     }
     
     
