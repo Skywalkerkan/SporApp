@@ -12,6 +12,7 @@ import FirebaseStorage
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var txtKullaniciAdi: UITextField!
     @IBOutlet weak var kayitOl: UIButton!
     @IBOutlet weak var txtParolaTekrar: UITextField!
     @IBOutlet weak var txtParola: UITextField!
@@ -57,9 +58,14 @@ class RegisterViewController: UIViewController {
     
     
     private func registerLayout(){
+        txtKullaniciAdi.placeholder = "Kullanıcı Adı"
+        txtKullaniciAdi.font = UIFont.boldSystemFont(ofSize: 15)
         txtEmail.placeholder = "Email"
+        txtEmail.font = UIFont.boldSystemFont(ofSize: 15)
         txtParola.placeholder = "Parola"
+        txtParola.font = UIFont.boldSystemFont(ofSize: 15)
         txtParolaTekrar.placeholder = "Parola tekrar"
+        txtParolaTekrar.font = UIFont.boldSystemFont(ofSize: 15)
         txtParola.isSecureTextEntry = true
         txtParolaTekrar.isSecureTextEntry = true
         kayitOl.layer.cornerRadius = 15
@@ -69,6 +75,7 @@ class RegisterViewController: UIViewController {
     
     @IBAction func kayitOlClicked(_ sender: Any) {
         print("kayit ol tiklandi")
+        guard let kullaniciAdi = txtKullaniciAdi.text else{return}
         guard let email = txtEmail.text else{return}
         guard let parola = txtParola.text else{return}
         guard let parolatekrar = txtParolaTekrar.text else{return}
@@ -93,6 +100,34 @@ class RegisterViewController: UIViewController {
                         return
                     }
                     print("Başarıyla yüklendi")
+                    
+                    referans.downloadURL { url, error in
+                        if let error = error{
+                            print("Image Yüklenemedi \(error)")
+                        }
+                        
+                        print("Upload edilen URL: \(url?.absoluteString ?? "")")
+                        
+                        let eklenecekData = ["KullaniciAdi": kullaniciAdi,
+                                             "KullaniciID": kaydolanKullaniciId,
+                                             "ProfilGoruntuURL": url?.absoluteString ?? ""
+                        ]
+                        
+                        Firestore.firestore().collection("Kullanicilar").document(kaydolanKullaniciId).setData(eklenecekData){ error in
+                            if let error = error{
+                                print("Kolleksiyonlanamadı \(error)")
+                            }
+                            print("Başarılı bir şekilde koleksiyon oluşturuldu")
+                            
+                            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                            let viewController = storyBoard.instantiateViewController(withIdentifier: "vucutKitleVC")
+                            viewController.modalPresentationStyle = .fullScreen
+                            self.present(viewController, animated: true)
+                            
+                        }
+                        
+                    }
+                    
                 }
             }
         }
